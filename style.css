@@ -1,0 +1,91 @@
+Optimizing tool selection...## Step-by-step instructions
+
+### 1. Prepare your local project in VS Code
+1. Open webapp-umair-36 folder in VS Code.
+2. Make sure your files are:
+   - `index.html`
+   - `style.css`
+   - `script.js`
+3. Update `index.html` so it displays:
+   - `Umair Ahmad`
+   - `ref #35`
+   - any simple styling or layout you want
+
+Example `index.html` content:
+```html
+
+
+### 2. Initialize Git locally
+1. Open the VS Code terminal.
+2. Run:
+   - `git init`
+   - `git add .`
+   - `git commit -m "Initial portfolio website with Umair Ahmad ref #35"`
+
+Example:
+```bash
+git init
+git add .
+git commit -m "Initial portfolio website with Umair Ahmad ref #35"
+```
+
+### 3. Push your code to GitHub
+1. Create a new GitHub repository:
+   - Go to GitHub
+   - Click “New repository”
+   - Name it something like `portfolio-umair-35`
+   - Do not add README/License if you already have local files
+2. Copy the GitHub repo URL
+3. In VS Code terminal, set the remote and push:
+```bash
+git remote add origin https://github.com/<your-username>/portfolio-umair-35.git
+git branch -M main
+git push -u origin main
+```
+
+### 4. Deploy to Azure using Static Web Apps
+#### Option A: Use Azure Static Web Apps extension in VS Code
+1. Install the `Azure Static Web Apps` extension in VS Code.
+2. Sign in to Azure from the extension.
+3. Click `Create Static Web App`.
+4. Choose:
+   - Subscription
+   - New or existing resource group
+   - App name
+   - Region
+   - GitHub repository and branch (`main`)
+   - Build preset: `Custom` or `Static Site`
+   - App artifact location: leave blank or `/` for plain HTML/CSS/JS
+5. Finish and let Azure create the GitHub Action workflow.
+
+#### Option B: Use GitHub Actions directly
+1. In your repository, create `.github/workflows/azure-static-web-apps.yml`
+2. Use the Azure Static Web Apps workflow template.
+3. Push to GitHub.
+4. Azure will build and deploy automatically from your repo.
+
+### 5. Manage code and continuous deployment
+1. Make changes locally in VS Code.
+2. Commit each update:
+```bash
+git add .
+git commit -m "Update portfolio content"
+git push
+```
+3. GitHub will trigger Azure deployment automatically if Static Web Apps is configured.
+4. Check Azure portal or GitHub Actions logs to confirm successful deploy.
+
+### 6. Verify the app
+1. Open the Azure Static Web App URL provided by Azure.
+2. Confirm it shows:
+   - `Umair Ahmad`
+   - `ref #35`
+
+### Quick summary
+- Build the website in `index.html`, `style.css`, `script.js`
+- Initialize Git and commit locally
+- Push to GitHub
+- Use Azure Static Web Apps for deployment
+- Every push to `main` auto-deploys your site
+
+> Tip: For a simple personal portfolio, Azure Static Web Apps is the easiest Azure deployment path for HTML/CSS/JS.
